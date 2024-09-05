@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Derenimo-AI
+        </title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}">
+    </head>
+    <body>
+        <div class="container h-100 d-felx align-items-center">
+            <div class="row justify-content-center w-100">
+                <div class="col-md-6 text-center">
+                    <h1>
+                        Record to get answers!
+                    </h1>
+
+                    <div class="button-container">    
+                        <!--Audio Recording-->
+                        <button id="record_button" class="a">
+                            Record
+                        </button>
+                        <button id="stop_button" class="a" disabled>
+                            Stop
+                        </button>
+                        <audio id="audio_playback" controld></audio>
+                    </div> 
+                    <!--From to Submit Recorded Audio-->
+                    <form id='upload_form' action="/process" method="post" style="display: none;" enctype="multipart/form-data" hidden>
+                        <input type="file" name="audio" id="audio_file">
+                        <input type="submit" value="upload">
+                    </form>
+                    <div class="output-container">
+                        {% if text %}
+                            <h2>Text Response:</h2>
+                            <p>{{ text }}</p>
+                        {% endif %}    
+
+                        {% if audio_url %}
+                            <h2>Audio Response:</h2>
+                            <audio controls>
+                                <source src="{{ url_for('static', filename='response.wav') }}" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        {% endif %}
+                    </div>    
+                </div>
+            </div>
+        </div>  
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>          
+    </body>
+</html>
