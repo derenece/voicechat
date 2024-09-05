@@ -1,0 +1,60 @@
+/* Change the primary button color */
+
+.a{
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    background-color: #3341ff; /* Custom orange color */
+    border-color: #3341ff; /* Match the border to the background */
+    color: #fff; /* Keep the text white */
+    display: flex;
+    gap: 30px; /* Space between buttons */
+    justify-content: center; /* Center buttons horizontally */
+}
+
+.button-container{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.a:hover {
+    background-color: #c70039; /* Darker color on hover */
+}
+
+.container{
+    padding-top: 200px;
+    padding-bottom: 200px;
+    
+}
+
+h1{
+    margin-bottom: 50px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Use a Google Font or a web-safe font */
+    background-color: #f8f9fa; /* Light grey background */
+    color: #343a40; /* Dark grey text */
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.output-container{
+    padding: 40px;
+}
+
+h2{
+    margin-bottom: 50px;
+    font-size: 36px;
+}
